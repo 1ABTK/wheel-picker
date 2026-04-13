@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheel Picker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-section">
+            <h1>Wheel Picker</h1>
+            <p>Enter options (one per line):</p>
+            <textarea id="optionsInput">Pizza
+Tacos
+Sushi
+Burgers
+Salad
+Pasta</textarea>
+            
+            <div class="controls">
+                <label class="toggle-container">
+                    <input type="checkbox" id="removeOption">
+                    <span class="checkmark"></span>
+                    Remove winner after spin
+                </label>
+                <button id="spinBtn">SPIN THE WHEEL</button>
+            </div>
+
+            <div id="staticResultBox">
+                Last Winner: <span id="staticWinner">None</span>
+            </div>
+        </div>
+
+        <div class="wheel-section">
+            <div class="arrow"></div>
+            <canvas id="wheelCanvas" width="500" height="500"></canvas>
+        </div>
+    </div>
+
+    <div id="winnerOverlay" class="overlay">
+        <div class="overlay-content">
+            <div class="confetti">🎉</div>
+            <h1>CONGRATULATIONS!</h1>
+            <div id="winnerNameDisplay"></div>
+            <p>This window will close in <span id="countdown">5</span> seconds</p>
+        </div>
+    </div>
+
+    <audio id="spinSound" src="https://www.soundjay.com/misc/sounds/mechanical-clanking-1.mp3" preload="auto"></audio>
+    <audio id="winSound" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
